@@ -26,6 +26,7 @@ RUN adduser -D -h /var/radicale -s /bin/false -u 1000 radicale radicale && \
 
 # Copy root file system
 COPY root /
+COPY config.ini /var/radicale
 
 # expose radicale port
 EXPOSE 8000
