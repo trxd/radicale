@@ -20,7 +20,9 @@ RUN set -xe && \
 # Add user radicale
 RUN adduser -D -h /var/radicale -s /bin/false -u 1000 radicale radicale && \
     mkdir -p /var/radicale && \
-    chown radicale.radicale /var/radicale
+    chown radicale.radicale /var/radicale && \
+    # Clean
+    rm -rf /var/cache/apk/*
 
 # Copy root file system
 COPY root /
